@@ -1,0 +1,8 @@
+# Analytics of the data
+numpy
+
+# Visualization
+matplotlib
+
+# Scraper
+selenium
