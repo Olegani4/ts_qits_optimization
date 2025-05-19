@@ -9,7 +9,7 @@ def compute_cost(assignments, lessons, teachers, groups, rooms, iteration=None):
     hc_cost, hc_metrics = calculate_hard_constraints_violations(assignments, lessons, rooms)
     # If there are violations, return the cost and violation metrics
     if hc_cost > 0:
-        cost += hc_cost * HARD_CONFLICTS_PENALTY
+        cost += hc_cost * HARD_CONFLICTS_PENALTY * len(lessons)  # avoid large penalties for small violations
         return cost, {"hard_conflicts": hc_metrics, "soft_conflicts": {}}
         
     # Sum up costs considering weights

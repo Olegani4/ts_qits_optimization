@@ -1,6 +1,6 @@
 from schedule_optimisation.constraints.soft import teacher_movement, teacher_room_reuse, group_splits, teacher_overload
 from schedule_optimisation.constraints.hard import teacher_conflicts, room_conflicts, group_conflicts
-from schedule_optimisation.weights import TEACHER_MOVE_BETWEEN_CONSECUTIVE, TEACHER_SAME_ROOM_FOR_DIFF, GROUP_SPLIT_DOUBLE, TEACHER_DAILY_OVERLOAD
+from schedule_optimisation.weights import (TEACHER_MOVE_BETWEEN_CONSECUTIVE, TEACHER_SAME_ROOM_FOR_DIFF, GROUP_SPLIT_DOUBLE, TEACHER_DAILY_OVERLOAD)
 
 def calculate_hard_constraints_violations(assignments, lessons, rooms):
     # Calculate the violations for each type of hard constraint
@@ -9,7 +9,7 @@ def calculate_hard_constraints_violations(assignments, lessons, rooms):
     group_conflicts_viol = group_conflicts(assignments, lessons)
 
     # Sum up all hard constraint violations
-    hard_violations = teacher_conflicts_viol + room_conflicts_viol + group_conflicts_viol
+    hard_violations = (teacher_conflicts_viol + room_conflicts_viol + group_conflicts_viol)
 
     # Prepare detailed metrics for analysis and reporting
     hard_metrics = {

@@ -5,5 +5,4 @@ GROUP_SPLIT_DOUBLE = 5                 # Penalty for splitting a double class (n
 TEACHER_DAILY_OVERLOAD = 2             # Penalty for teacher who has more than 4 classes per day
 
 # Weights for hard constraints
-# HARD_CONFLICTS_PENALTY = 1_000_000   # Large penalty for violating any hard constraint
-HARD_CONFLICTS_PENALTY = 100_000       # Large penalty for violating any hard constraint
+HARD_CONFLICTS_PENALTY = 100_000       # Large penalty multiplier for violating any hard constraint
